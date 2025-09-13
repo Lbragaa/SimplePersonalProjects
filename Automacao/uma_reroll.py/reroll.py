@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # ───────────────────────────────────────────────────────────────
-#  Uma Musume Steam build – automatic reroll macro
-#  July 2025 · coordinates by LuckyBoi · code by Hikari
+#  Uma Musume Steam build – automatic reroll macro 
 #  Requires:  pip install pyautogui pygetwindow
 # ───────────────────────────────────────────────────────────────
 import pyautogui as pg, pygetwindow as gw, time, random, sys
