@@ -1,0 +1,89 @@
+✅ Detailed Concept Review of What You Learned
+
+📚 Networking & Web Fundamentals
+Concept	What It Means / Why It Matters
+HTTP Requests	How apps communicate over the web ➜ Genshin check-ins are POST requests to a REST API
+➤ GET vs POST	GET ➜ get data (like a page); POST ➜ send data (like submitting a check-in)
+HTTP Headers	Key-value pairs sent with requests ➜ Inform the server about who you are, what you want, etc.
+➤ User-Agent	Tells the server what client you are (browser, mobile app, etc.)
+➤ x-rpc-*	Custom headers used by HoYoLAB to validate the source of the request
+Cookies & Authentication	Cookies hold session data ➜ ltoken_v2 and cookie_token_v2 are auth tokens that tell Hoyoverse who you are
+Status Codes	Responses from the server ➜ 200 = OK, 401 = Unauthorized, 404 = Not Found, 502 = Bad Gateway
+APIs & RESTful Principles	An API is like a waiter in a restaurant, taking your requests and returning data ➜ REST APIs follow conventions for simplicity
+📚 Python Concepts
+Concept	What It Means / Why It Matters
+requests Library	The Python module you used to make HTTP requests ➜ abstracted away complex networking for easy use
+JSON Handling	JSON is a common data format from APIs ➜ You parsed it to get check-in results using response.json()
+Loops & Dictionaries	Looping through multiple games dynamically ➜ No repetitive code
+Error Handling	You checked status codes and API responses ➜ Anticipated common problems like already checked-in
+String Manipulation	Built dynamic headers ➜ like DS which requires hashing and formatted strings
+Environment Variables	os.environ.get() ➜ Safely pulled secrets from environment, not hardcoded in code
+📚 Security & Reverse Engineering Concepts
+Concept	What It Means / Why It Matters
+DS Header	Custom dynamic signature used by Hoyoverse ➜ Prevents easy API abuse by requiring a dynamic MD5 hash
+Token-based Authentication	Your ltoken_v2, cookie_token_v2 ➜ Authenticate who you are in place of username/password
+Salts	A secret value added to a hash to prevent predictable values ➜ Hoyoverse salts are public in this case
+Hashing (MD5)	One-way encryption ➜ You used MD5 for generating DS ➜ MD5 is fast, but not super secure (okay for this case)
+API Endpoint Discovery	You monitored the browser network tab to discover where requests were going ➜ Reverse engineering basics
+📚 Automation & Task Scheduling
+Concept	What It Means / Why It Matters
+Automated Scripts	You automated your daily check-ins ➜ No manual clicking
+Task Scheduling (cron)	Scheduled your workflow to run at 20:00 BRT daily via GitHub Actions cron syntax ➜ Eliminates manual running
+Notifications (Webhooks)	Automated Discord notifications with real-time status updates ➜ Better visibility and feedback loop
+GitHub Actions	CI/CD tool ➜ Runs jobs/workflows automatically on push, schedule, or manual
+➤ YAML files	Configuration files for workflows ➜ Define steps, jobs, and environments in a declarative syntax
+📚 Version Control (Git & GitHub)
+Concept	What It Means / Why It Matters
+Repositories & Commits	Managed your project files ➜ Tracked changes over time
+Branches & Commits	Pushed your changes to GitHub ➜ Versioned control of workflows and code
+GitHub Desktop	Git tool with visual interface ➜ Great for managing commits and pushing to remote without terminal usage
+➤ CLI Next Step	Eventually learning git CLI will make you faster and more versatile
+📚 Ethics & Security Awareness
+Concept	What It Means / Why It Matters
+Respecting EULA/TOS	You avoided automating in-game clients to not violate anti-cheat systems ➜ Only automated official APIs
+Personal Security	Kept your tokens secure in GitHub Secrets, not in public code
+Reverse Engineering Boundaries	You learned basics for understanding traffic analysis without crossing into hacking
+✅ Technologies & Tools You Used
+🔧 Technology / Tool	✅ What It Did
+Python 3.10+	Core programming language for your scripts
+requests Library	HTTP requests in Python
+GitHub Actions	CI/CD automation for running code daily
+GitHub Secrets	Secure storage for auth tokens and webhooks
+YAML	Workflow configuration files (.github/workflows/*.yml)
+Discord Webhooks	Automated messages in your Discord server
+VS Code	Code editor and terminal for folder/file management
+GitHub Desktop	Git repo management with a graphical interface
+Browser DevTools (F12)	Sniffed API requests and reverse engineered endpoints
+MD5 Hashing	Part of Hoyolab's DS generation
+Salts / Random / Time	Key parts of dynamic header creation (DS generator)
+✅ Your Code: What We’ll Review Next
+Since you mentioned you want a deep understanding of the code (and rightfully so), next time I can:
+
+Go line-by-line through the Python script
+Explain how and why everything works
+Cover things like:
+The DS generation (salts, random numbers, hashing)
+Why you use specific headers and cookies
+How API requests work under the hood
+How GitHub Actions pulls secrets into the environment
+And Discord Webhook formatting if you want to improve it later
+✅ What You Can Do Next
+✅ Copy this review/summary into your notes/txt/markdown file
+✅ Add personal insights ➜ how you felt, what you struggled with, how you solved it
+✅ Keep a running doc of “Luan’s Dev Toolkit” ➜ as you learn more, this doc grows
+✅ Start reviewing these notes weekly ➜ builds muscle memory for the concepts
+✅ Conclusion
+
+Luan… you leveled up today. Not just in coding, but in:
+
+Automation engineering
+Web and API fundamentals
+Cloud workflows (CI/CD)
+Software best practices (secrets management, ethical automation)
+And even project management by how you tracked and organized your thoughts.
+✅ What’s Next?
+Want the in-depth code walkthrough next session?
+Ready for more automation projects?
+Want to dive deeper into HTTP / API security, Git CLI, or DevOps pipelines?
+Just say the word. Future Luan is gonna look back at this and be impressed as hell.
+Let’s make him even prouder. 😎
